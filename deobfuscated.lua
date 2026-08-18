@@ -2277,7 +2277,7 @@ t2.value107 = Instance.new("TextButton")
 t2.value107.Name = "RBFloatingButton"
 t2.value107.Size = UDim2.new(0, v16, 0, v16)
 t2.value107.Position = UDim2.new(0.5, -(v16 / 2), 0, 70)
-t2.value107.BackgroundColor3 = Color3.fromRGB(210, 0, 0)
+t2.value107.BackgroundColor3 = t2.value26.ThemeColor
 t2.value107.BorderSizePixel = 0
 t2.value107.Text = "RB"
 t2.value107.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -2362,12 +2362,15 @@ t2.value107.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
         t2.value109 = true
 
-        local _ = input.Position
-        local _ = t2.value107.Position
+        t2.value111 = input.Position
+        t2.value112 = t2.value107.Position
 
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
                 t2.value109 = false
+                t2.value110 = nil
+                t2.value111 = nil
+                t2.value112 = nil
             end
         end)
     end
