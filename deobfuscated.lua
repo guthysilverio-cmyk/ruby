@@ -2274,12 +2274,12 @@ function t2.value53()
     v40("Center", UDim2.new(0.5, 0, 0.5, 0), UDim2.new(0, 4, 0, 4), 0)
 end
 t2.value107 = Instance.new("TextButton")
-t2.value107.Name = "FloatingButton"
+t2.value107.Name = "RBFloatingButton"
 t2.value107.Size = UDim2.new(0, v16, 0, v16)
-t2.value107.Position = UDim2.new(0, 15, 0, 80)
-t2.value107.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+t2.value107.Position = UDim2.new(0.5, -(v16 / 2), 0, 70)
+t2.value107.BackgroundColor3 = Color3.fromRGB(210, 0, 0)
 t2.value107.BorderSizePixel = 0
-t2.value107.Text = "E4"
+t2.value107.Text = "RB"
 t2.value107.TextColor3 = Color3.fromRGB(255, 255, 255)
 t2.value107.TextSize = not t2.value25 and 24 or 18
 t2.value107.Font = Enum.Font.GothamBold
@@ -2295,7 +2295,7 @@ UICorner4.CornerRadius = UDim.new(1, 0)
 UICorner4.Parent = t2.value107
 local UIStroke3 = Instance.new("UIStroke")
 
-UIStroke3.Name = "E4RainbowLight"
+UIStroke3.Name = "RBRainbowLight"
 UIStroke3.Thickness = 3
 UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke3.Transparency = 0
@@ -2518,7 +2518,7 @@ t2.value124 = Instance.new("TextLabel")
 t2.value124.Size = UDim2.new(0.7, 0, 1, 0)
 t2.value124.Position = UDim2.new(0.05, 0, 0, 0)
 t2.value124.BackgroundTransparency = 1
-t2.value124.Text = "E4 HUB"
+t2.value124.Text = "RUBY"
 t2.value124.TextColor3 = t2.value26.ThemeColor
 t2.value124.TextSize = 20
 t2.value124.Font = Enum.Font.GothamBold
