@@ -305,13 +305,16 @@ TextLabel2.Visible = false
 TextLabel2.Parent = Frame
 if v5 and v5 ~= "" then
     t2.value21.Text = v5
-    t2.value22.Text = "AUTO LOGIN..."
+    t2.value22.Text = "VALIDANDO..."
     t1.value2 = { t2.value17(v5) }
     t1.value1 = t1.value2[2]
 
     if t1.value2[1] then
         t2.value19 = true
         t2.value22.Text = "KEY FIXA ATIVA"
+        t2.value20.Visible = true
+        t2.value20.Enabled = true
+        t2.value21.Text = v5
         print("RUBY HUB: AUTO LOGIN")  -- ALTERADO
     else
         t2.value15(t2.value11)
@@ -322,6 +325,7 @@ if v5 and v5 ~= "" then
         t1.value2.Text = v13
     end
 end
+
 t2.value22.MouseButton1Click:Connect(function()
     local v174 = t2.value21.Text:gsub("%s+", "")
     t2.value22.Text = "VERIFICANDO..."
@@ -330,15 +334,17 @@ t2.value22.MouseButton1Click:Connect(function()
         t2.value14(t2.value11, v174)
         t2.value19 = true
         t2.value22.Text = "KEY CORRETA"
+        t2.value20.Visible = true
+        t2.value20.Enabled = true
         task.wait(0.8)
-        t2.value20:Destroy()
-
         return
     end
     t2.value22.Text = t2.value18(v176)
     t2.value15(t2.value11)
 end)
 
+t2.value20.Visible = true
+t2.value20.Enabled = true
 local _ = t2.value19
 repeat
     task.wait()
