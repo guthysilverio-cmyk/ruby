@@ -211,12 +211,7 @@ function t2.value18(p6)
     return v148 or raw
 end
 t2.value19 = false
-local FixedKey = "PARKER-RUBY"
 local v5 = t2.value13("RUBYKey.txt")  -- ALTERADO
-if not v5 or v5 == "" then
-    v5 = FixedKey
-    t2.value14("RUBYKey.txt", v5)
-end
 
 t2.value20 = Instance.new("ScreenGui")
 t2.value20.Name = "RUBYHUBKeySystem"  -- ALTERADO
@@ -262,7 +257,7 @@ t2.value21 = Instance.new("TextBox")
 t2.value21.Size = UDim2.new(1, -50, 0, 46)
 t2.value21.Position = UDim2.new(0, 25, 0, 68)
 t2.value21.PlaceholderText = "Insira sua Key"
-t2.value21.Text = FixedKey
+t2.value21.Text = ""
 t2.value21.TextColor3 = Color3.fromRGB(255, 255, 255)
 t2.value21.PlaceholderColor3 = Color3.fromRGB(160, 160, 160)
 t2.value21.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
@@ -304,17 +299,13 @@ TextLabel2.TextWrapped = true
 TextLabel2.Visible = false
 TextLabel2.Parent = Frame
 if v5 and v5 ~= "" then
-    t2.value21.Text = v5
-    t2.value22.Text = "VALIDANDO..."
+    t2.value22.Text = "AUTO LOGIN..."
     t1.value2 = { t2.value17(v5) }
     t1.value1 = t1.value2[2]
 
     if t1.value2[1] then
         t2.value19 = true
-        t2.value22.Text = "KEY FIXA ATIVA"
-        t2.value20.Visible = true
-        t2.value20.Enabled = true
-        t2.value21.Text = v5
+        t2.value20:Destroy()
         print("RUBY HUB: AUTO LOGIN")  -- ALTERADO
     else
         t2.value15(t2.value11)
@@ -325,7 +316,6 @@ if v5 and v5 ~= "" then
         t1.value2.Text = v13
     end
 end
-
 t2.value22.MouseButton1Click:Connect(function()
     local v174 = t2.value21.Text:gsub("%s+", "")
     t2.value22.Text = "VERIFICANDO..."
@@ -334,17 +324,15 @@ t2.value22.MouseButton1Click:Connect(function()
         t2.value14(t2.value11, v174)
         t2.value19 = true
         t2.value22.Text = "KEY CORRETA"
-        t2.value20.Visible = true
-        t2.value20.Enabled = true
         task.wait(0.8)
+        t2.value20:Destroy()
+
         return
     end
     t2.value22.Text = t2.value18(v176)
     t2.value15(t2.value11)
 end)
 
-t2.value20.Visible = true
-t2.value20.Enabled = true
 local _ = t2.value19
 repeat
     task.wait()
