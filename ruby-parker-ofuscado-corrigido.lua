@@ -304,13 +304,14 @@ TextLabel2.TextWrapped = true
 TextLabel2.Visible = false
 TextLabel2.Parent = Frame
 if v5 and v5 ~= "" then
+    t2.value21.Text = v5
     t2.value22.Text = "AUTO LOGIN..."
     t1.value2 = { t2.value17(v5) }
     t1.value1 = t1.value2[2]
 
     if t1.value2[1] then
         t2.value19 = true
-        t2.value20:Destroy()
+        t2.value22.Text = "KEY FIXA ATIVA"
         print("RUBY HUB: AUTO LOGIN")  -- ALTERADO
     else
         t2.value15(t2.value11)
